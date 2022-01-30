@@ -1,18 +1,25 @@
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import time
 
 sender_email = "belyjob@gmail.com"
 password = 'WBeli60034'
 receiver_email =input('Enter reciver email')#input recive email
-
-if(receiver_email.split('@')[1].__contains__('.')!=True):#test validate email
+try:
+    if(receiver_email.split('@')[1].__contains__('.')!=True):#test validate email
+        print('The input is incorrect')
+        time.sleep(5)
+        exit()
+except :
     print('The input is incorrect')
+    time.sleep(5)
     exit()
 
 subject=input('Enter subject mail')#input subject
 if(subject==''):#validate subject
     print('Subject is not null')
+    time.sleep(5)
     exit()
 
 body= input('Enter body mail')
@@ -34,6 +41,10 @@ try:
             sender_email, receiver_email, message.as_string()
         )
     print('Success email!!')
+    time.sleep(5)
+    exit()
 except Exception as e:
     print('No send email '+e)
+    time.sleep(5)
     exit()
+
