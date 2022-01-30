@@ -1,0 +1,13 @@
+{
+  "logger_configuration": {
+        "name": "regulation_controls_automation_log",
+        "separate_logs_per_assignment": false,
+        "available_log_level": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+        "minimum_level": "DEBUG",
+        "handlers": d{
+            "handler_type_file": {
+                "log_file_path": "logs/"
+            }
+        }
+    }
+}
